@@ -28,21 +28,6 @@ object First {
       }
     }
 
-    def frontToBack(status: String): ArrayBuffer[String] = {
-      val arr = new ArrayBuffer[String]()
-      val upperStatus = status.toUpperCase()
-      if (upperStatus.equals(FrontStatusEnum.REQUESTED.toString)) {
-        arr.addOne(BackStatusEnum.DRAFT.toString)
-        arr.addOne(BackStatusEnum.BUILDING.toString)
-        arr.addOne(BackStatusEnum.PENDING.toString)
-      } else if (upperStatus.equals(FrontStatusEnum.FAILED.toString)) {
-        arr.addOne(BackStatusEnum.INVALID.toString)
-        arr.addOne(BackStatusEnum.FAILED.toString)
-      } else {
-        arr.addOne(BackStatusEnum.BUILT.toString)
-      }
-      arr
-    }
     def hasStatus(status: Option[FrontStatus]): Unit = {
       if (status.isDefined) {
         if (status.get.toString.equals("REQUESTED")) {
