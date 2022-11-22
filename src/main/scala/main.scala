@@ -43,11 +43,6 @@ object First {
       }
       arr
     }
-
-    //var arr1 = frontToBack("requested")
-    //    println(arr1.contains("DRAFT"))
-    //println(frontToBack("requested").length)
-    //println(arr1)
     def hasStatus(status: Option[FrontStatus]): Unit = {
       if (status.isDefined) {
         if (status.get.toString.equals("REQUESTED")) {
